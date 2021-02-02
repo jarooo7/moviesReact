@@ -9,6 +9,6 @@ const Image = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 15px 50px 5px 5px; 
+  border-radius: 15px 50px 0px 0px; 
 `;
 export default Image;

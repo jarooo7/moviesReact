@@ -5,7 +5,6 @@ export const Container = styled.div`
     transition: 0.3s;
     width: 300px;
     margin: 20px;
-    float :left;
     background-color: #333333;
     border-radius: 15px 50px; 
     &:hover {
@@ -16,5 +15,11 @@ export const Container = styled.div`
 export const Text = styled.div`
     padding: 20px 16px;
     text-align: center;
+`;
+
+export const CardContainer = styled.div`
+    margin-left: auto;
+    margin-right:auto;
+    box-sizing: border-box;
 `;
 
