@@ -8,9 +8,20 @@ import {SearchHeader } from './Search.styles';
 const Search = (props) => {
   const {name} = useParams();
   const [movies, setMowies] = useState([]);
+  const [fav, setFav] = useState([]);
+
+  const isFav=(id)=>{
+    return fav.some(x=>x.id===id);
+  }
+
+  const handelUpdateFav = ()=>{
+    setFav(JSON.parse(localStorage.getItem('fav')));
+  }
+
   useEffect(()=>{
     const getNews= async () =>{
       setMowies([]);
+      handelUpdateFav();
       axios.get(`http://api.tvmaze.com/search/shows?q=${name}`).
       then(res=> {
         console.log(res.data);
@@ -28,11 +39,14 @@ const Search = (props) => {
       {movies.map((m=>(
          <Card
          key={m.show.id}
+         id={m.show.id}
          img={m.show.image}
          url="#"
          name={m.show.name}
          genre={m.show.genres}
          lang={m.show.language}
+         fav={isFav(m.show.id)}
+         update={handelUpdateFav}
        />
       )))}
       </div>
