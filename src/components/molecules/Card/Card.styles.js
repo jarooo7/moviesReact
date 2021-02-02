@@ -15,6 +15,9 @@ export const Container = styled.div`
 export const Text = styled.div`
     padding: 20px 16px;
     text-align: center;
+    p, h2{
+        padding:10px
+    }
 `;
 
 export const CardContainer = styled.div`
@@ -22,4 +25,3 @@ export const CardContainer = styled.div`
     margin-right:auto;
     box-sizing: border-box;
 `;
-
