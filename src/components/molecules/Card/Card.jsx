@@ -11,7 +11,7 @@ const Card = (props) => {
         <Image src={img? img.medium: "https://cdn.pixabay.com/photo/2017/01/25/17/35/camera-2008489_960_720.png"}/>
         <Text>
           <h2>{name}</h2>
-          <p>{genre?genre.map(x=><span>{x} </span>) : null}</p>
+          <p>{genre?genre.map(x=><span key={x}>{x} </span>) : null}</p>
           <p>Język : {lang}</p>
           <Button url={url}>Przejdź do strony filmu</Button>
         </Text>

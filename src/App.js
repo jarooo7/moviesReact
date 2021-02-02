@@ -1,11 +1,15 @@
 import './App.css';
+import NavBar from './components/molecules/NavBar/NavBar';
 import Home from './components/organisms/Home';
 
 
 
 function App() {
   return (
-    <Home/>
+    <>
+      <NavBar/>
+      <Home/>
+    </>
   );
 }
 
