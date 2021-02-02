@@ -1,19 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Test } from './Card.styles';
+import { Container, Text } from './Card.styles';
+import Image from '../../atoms/Image'
+import Button from '../../atoms/Button'
 
-const Card = (props) => (
-  <div className="CardWrapper">
-    Test content
-  </div>
-);
-
-Card.propTypes = {
-  // bla: PropTypes.string,
+const Card = (props) => {
+  const {name, genre, lang, img, url }= props;
+  return (
+    <Container>
+      <Image src={img}/>
+      <Text>
+        <h2>{name}</h2>
+        <p>{genre.map(x=>x)}</p>
+        <p>{lang}</p>
+        <Button url={url}>Przejdź do strony filmu</Button>
+      </Text>
+    </Container>
+  );
 };
 
-Card.defaultProps = {
-  // bla: 'test',
-};
 
 export default Card;
