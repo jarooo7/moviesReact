@@ -13,7 +13,7 @@ export const Container = styled.div`
     `;
 
 export const Text = styled.div`
-    padding: 20px 16px;
+    padding: 0px 16px 20px 16px;
     text-align: center;
     p, h2{
         padding:10px

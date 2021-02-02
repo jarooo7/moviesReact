@@ -5,9 +5,20 @@ import axios from 'axios';
 
 const Home = (props) => {
   const [movies, setMowies] = useState([]);
+  const [fav, setFav] = useState([]);
+
+  const isFav=(id)=>{
+    return fav.some(x=>x.id===id);
+  }
+
+  const handelUpdateFav = ()=>{
+    setFav(JSON.parse(localStorage.getItem('fav')));
+  }
+
   useEffect(()=>{
     const getNews= async () =>{
       const date = new Date ();
+      setFav(JSON.parse(localStorage.getItem('fav')));
       axios.get(`http://api.tvmaze.com/schedule/web?date=${date.toISOString().substr(0, 10)}`).
       then(res=> {
         console.log(res.data);
@@ -21,11 +32,14 @@ const Home = (props) => {
       {movies.map((m=>(
          <Card
          key={m.id}
+         id={m.id}
          img={m._embedded.show.image}
          url="#"
          name={m.name}
          genre={m._embedded.show.genres}
          lang={m._embedded.show.language}
+         fav={isFav(m.id)}
+         update={handelUpdateFav}
        />
       )))}
      
