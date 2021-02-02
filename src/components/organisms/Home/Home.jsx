@@ -7,7 +7,8 @@ const Home = (props) => {
   const [movies, setMowies] = useState([]);
   useEffect(()=>{
     const getNews= async () =>{
-      axios.get(`http://api.tvmaze.com/schedule/web?date=2021-02-02`).
+      const date = new Date ();
+      axios.get(`http://api.tvmaze.com/schedule/web?date=${date.toISOString().substr(0, 10)}`).
       then(res=> {
         console.log(res.data);
         setMowies(res.data);

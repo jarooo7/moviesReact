@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Nav = styled.div`
@@ -24,13 +25,14 @@ width: 100wv;
 
 `;
 
-export const Item = styled.a`
+export const Item = styled(NavLink)`
 
 float: left;
 color: #f2f2f2;
 text-align: center;
 padding: 14px 16px;
 text-decoration: none;
+margin-left:20px;
 font-size: 17px;
 
 &:hover {
@@ -39,7 +41,7 @@ font-size: 17px;
   }
   
 &.active {
-    border-top: 3px solid;
+    border-bottom: 3px solid;
     color: white;
   }
 

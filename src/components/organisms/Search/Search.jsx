@@ -10,6 +10,7 @@ const Search = (props) => {
   const [movies, setMowies] = useState([]);
   useEffect(()=>{
     const getNews= async () =>{
+      setMowies([]);
       axios.get(`http://api.tvmaze.com/search/shows?q=${name}`).
       then(res=> {
         console.log(res.data);
@@ -17,7 +18,7 @@ const Search = (props) => {
       });
     }
     getNews();
-  },[]);
+  },[name]);
   return(
     <>
     {movies.length!==0 ? (
