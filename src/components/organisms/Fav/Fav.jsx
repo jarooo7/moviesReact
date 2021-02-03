@@ -29,7 +29,7 @@ const Fav = (props) => {
   },[]);
   return(
     <>
-    {fav.length===null?<div className="MainContainer">
+    {fav.length!==0?<div className="MainContainer">
       {fav.map((m=>(
          <Card
          key={m.id}

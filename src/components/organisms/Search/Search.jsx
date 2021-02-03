@@ -41,7 +41,7 @@ const Search = (props) => {
          key={m.show.id}
          id={m.show.id}
          img={m.show.image}
-         url="#"
+         url={m.show.url}
          name={m.show.name}
          genre={m.show.genres}
          lang={m.show.language}

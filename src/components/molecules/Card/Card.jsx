@@ -36,7 +36,7 @@ const Card = (props) => {
           <h2>{name}</h2>
           <p>{genre?genre.map(x=><span key={x}>{x} </span>) : null}</p>
           <p>Język : {lang}</p>
-          <Button onClick={fav?handelRmFav:handelAddFav} >Przejdź do strony filmu</Button>
+          <Button href={url} target="_blank">Przejdź do strony filmu</Button>
         </Text>
       </Container>
     </CardContainer>

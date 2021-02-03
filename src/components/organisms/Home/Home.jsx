@@ -34,7 +34,7 @@ const Home = (props) => {
          key={m.id}
          id={m.id}
          img={m._embedded.show.image}
-         url="#"
+         url={m._embedded.show.url}
          name={m.name}
          genre={m._embedded.show.genres}
          lang={m._embedded.show.language}
