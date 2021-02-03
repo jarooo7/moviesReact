@@ -29,7 +29,7 @@ const Fav = (props) => {
   },[]);
   return(
     <>
-    {fav.length!==0?<div className="MainContainer">
+    {fav!==null?fav.length?<div className="MainContainer">
       {fav.map((m=>(
          <Card
          key={m.id}
@@ -47,7 +47,12 @@ const Fav = (props) => {
     </div>:
     <Header>
       Nie masz ulubionych filmów
-    </Header>}
+    </Header>
+    :
+    <Header>
+    Nie masz ulubionych filmów
+  </Header>
+    }
     </>
   );
 };

@@ -11,7 +11,12 @@ const Search = (props) => {
   const [fav, setFav] = useState([]);
 
   const isFav=(id)=>{
-    return fav.some(x=>x.id===id);
+    if(fav!==null){
+      return fav.some(x=>x.id===id);
+    }
+    else{
+      return false;
+    }
   }
 
   const handelUpdateFav = ()=>{
