@@ -7,7 +7,7 @@ const Card = (props) => {
   const {name, genre, lang, img, url, fav, update, id }= props;
   const handelAddFav=()=>{
     const data = {
-      name, genre, lang, img, url, fav
+      name, genre, lang, img: img, url, fav
     }
     let current =  JSON.parse(localStorage.getItem('fav'));
     if(current ===null){

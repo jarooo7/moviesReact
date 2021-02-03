@@ -28,6 +28,7 @@ const NavBar = (props) => {
   return(
     <Nav>
       <Item to='/' exact>Start</Item>
+      <Item to='/fav'>Ulubione</Item>
       <SearchContainer>
         <Input value={searchText} onChange={handelChange} type="text" name="search" placeholder="Search.." />
         <Button onClick={handelSearch}>Wyszukaj</Button>
